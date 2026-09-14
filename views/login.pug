@@ -1,0 +1,15 @@
+extends layout
+block content
+  section.auth-page
+    .auth-card
+      p.eyebrow Private client area
+      h1 Welcome<br><em>back.</em>
+      if error
+        p.form-error=error
+      form.auth-form(action="/login",method="POST")
+        label Email
+          input(type="email",name="email",required)
+        label Password
+          input(type="password",name="password",required)
+        button.btn(type="submit") Login
+      p.auth-foot New client? #[a(href="/signup") Create account]

@@ -1,0 +1,19 @@
+extends layout
+block content
+  section.page-hero.dark
+    p.eyebrow 03 / Gallery
+    h1 A deeper look<br><em>at the stories.</em>
+  section.section
+    .filter-bar
+      button.filter-btn.active(data-filter="all") All
+      button.filter-btn(data-filter="wedding") Weddings
+      button.filter-btn(data-filter="portrait") Portraits
+      button.filter-btn(data-filter="editorial") Editorial
+    .gallery-grid
+      - const photos=[['wedding','https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=84'],['portrait','https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=84'],['editorial','https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=84'],['wedding','https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=84'],['portrait','https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=84'],['editorial','https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=84']]
+      each photo in photos
+        button.gallery-item(data-category=photo[0],data-full=photo[1])
+          img(src=photo[1],alt=photo[0],loading="lazy")
+    .lightbox
+      button.lightbox-close(type="button") ×
+      img(src="",alt="")

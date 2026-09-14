@@ -1,0 +1,32 @@
+extends layout
+block content
+  section.page-hero.dark
+    p.eyebrow 05 / Contact
+    h1 Let's talk about<br><em>your date.</em>
+    p.page-lead Tell us the basics. We'll reply with availability and next steps.
+  section.section.booking#booking
+    .booking-grid
+      div
+        p.section-kicker Enquiry
+        h2 Your shoot,<br><em>your way.</em>
+        p The form captures the details needed for a useful first response.
+      form.booking-form(action="/api/enquiry",method="POST")
+        label Full name
+          input(type="text",name="name",required)
+        label Email / WhatsApp
+          input(type="text",name="contact",required)
+        label Shoot type
+          select(name="shootType",required)
+            option(value="") Select one
+            option Wedding
+            option Pre-wedding
+            option Portrait
+            option Event
+            option Editorial
+        label Preferred date
+          input(type="date",name="date",required)
+        label Location
+          input(type="text",name="location")
+        label Tell us a little
+          textarea(name="message",rows="5")
+        button.btn(type="submit") Send enquiry

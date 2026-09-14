@@ -1,0 +1,21 @@
+extends layout
+block content
+  section.page-hero.dark
+    p.eyebrow Private client area
+    h1 Hello, #{user.name}.<br><em>Your story is here.</em>
+    p.page-lead Your bookings, enquiries and private gallery access will appear here.
+  section.section.dashboard
+    .dashboard-grid
+      article.dashboard-card
+        span STATUS
+        h3 Booking
+        p Your confirmed booking details will appear here.
+      article.dashboard-card
+        span ENQUIRIES
+        h3 #{enquiries.length}
+        p Enquiries submitted from your account.
+      article.dashboard-card
+        span GALLERY
+        h3 Private
+        p Your delivered gallery will be linked here.
+    a.btn(href="/contact#booking") Start another enquiry

@@ -1,0 +1,17 @@
+extends layout
+block content
+  section.auth-page
+    .auth-card
+      p.eyebrow Client area
+      h1 Keep your<br><em>story close.</em>
+      if error
+        p.form-error=error
+      form.auth-form(action="/signup",method="POST")
+        label Full name
+          input(type="text",name="name",required)
+        label Email
+          input(type="email",name="email",required)
+        label Password
+          input(type="password",name="password",minlength="8",required)
+        button.btn(type="submit") Create account
+      p.auth-foot Already registered? #[a(href="/login") Login]

@@ -1,0 +1,49 @@
+docType 
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1")
+    meta(name="description",content="Premium wedding, portrait, event and editorial photography by MK Photography.")
+    meta(name="robots",content="index,follow")
+    title #{title} | MK Photography
+    link(rel="preconnect",href="https://fonts.googleapis.com")
+    link(rel="preconnect",href="https://fonts.gstatic.com",crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap",rel="stylesheet")
+    link(rel="stylesheet",href="/css/style.css")
+  body
+    header.site-header
+      a.logo(href="/") MK<span>Photography</span>
+      button.menu-toggle(type="button") ☰
+      nav.main-nav
+        a(href="/") Home
+        a(href="/about") About
+        a(href="/portfolio") Portfolio
+        a(href="/gallery") Gallery
+        a(href="/services") Services
+        a(href="/contact") Contact
+        if user
+          a(href="/dashboard") My Area
+          form(action="/logout",method="POST").inline
+            button.nav-link Logout
+        else
+          a(href="/login") Login
+          a.nav-book(href="/signup") Client Signup
+    main
+      block content
+    footer.site-footer
+      .footer-grid
+        .footer-brand
+          a.logo(href="/") MK<span>Photography</span>
+          p Visual stories, carefully framed.
+        .footer-links
+          h4 Explore
+          a(href="/portfolio") Portfolio
+          a(href="/gallery") Gallery
+          a(href="/services") Services
+        .footer-links
+          h4 Connect
+          a(href="/contact") Contact
+          a(href="/signup") Client Area
+      .footer-bottom © 2026 MK Photography
+    a.whatsapp-float(href="https://wa.me/917376426350?text=Hi%20MK%20Photography%2C%20I%27d%20like%20to%20enquire.",target="_blank") WA
+    script(src="/js/app.js")
